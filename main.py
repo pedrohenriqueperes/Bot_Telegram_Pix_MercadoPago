@@ -12,7 +12,9 @@ def start(message):
     button1 = types.InlineKeyboardButton("Plano 1 - R$100", callback_data='plano_1')
     button2 = types.InlineKeyboardButton("Plano 2 - R$200", callback_data='plano_2')
     button3 = types.InlineKeyboardButton("Plano 3 - R$300", callback_data='plano_3')
-    markup.add(button1, button2, button3)
+    markup.add(button1)
+    markup.add(button2)
+    markup.add(button3)
     bot.send_message(message.chat.id, "Escolha um plano:", reply_markup=markup)
 
 @bot.callback_query_handler(func=lambda call: True)
